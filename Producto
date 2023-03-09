@@ -1,0 +1,52 @@
+package ar.edu.utn;
+
+public class ingresoProducto {
+    public static void main(String[] args) {
+        Producto prod = new Producto("atun");
+        Producto prod1 = new Producto("cepillo de dientes");
+        prod1.setDescripcion("codigo = 1234556\nprecio = 550");
+        Producto prod2 = new Producto("pasta de dientes");
+        prod2.setDescripcion("codigo = 4321\nprecio = 750");
+
+        System.out.println(prod.getNombre());
+        System.out.println("");
+        System.out.println(prod1.getNombre());
+        System.out.println(prod1.getDescripcion());
+        System.out.println("");
+        System.out.println(prod2.getNombre());
+        System.out.println(prod2.getDescripcion());
+
+    }
+}
+
+
+package ar.edu.utn;
+
+import java.time.LocalDate;
+
+public class Producto {
+
+    private String nombre;
+    private String descripcion;
+    private LocalDate fechaAlta;
+    private Integer pesoKg;
+    private Double precio;
+
+    private static final Double minPrecio = 0.1;
+
+    public Producto(String nombre) {
+        this.nombre = nombre;
+        this.fechaAlta = LocalDate.now();
+        this.precio = minPrecio;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+    public String getDescripcion() {
+        return this.descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+}
